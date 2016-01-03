@@ -11,4 +11,6 @@ if [ $(id -u openwrt) != $DEV_UID ]; then
     usermod -o -u $DEV_UID -g $DEV_GID openwrt
 fi
 
+chown openwrt:openwrt -R ~openwrt
+
 exec sudo -EHu openwrt "$@"

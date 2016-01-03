@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y git-core build-essential libssl-dev lib
 RUN apt-get install -y remake
 RUN apt-get clean
 RUN useradd -m -s /bin/bash openwrt
+ADD dot_quiltrc /home/openwrt/.quiltrc
 
 RUN echo 'openwrt ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt && chmod 0440 /etc/sudoers.d/openwrt
 
